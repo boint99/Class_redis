@@ -1,0 +1,19 @@
+{
+  "name": "class-redis",
+  "version": "1.0.0",
+  "description": "Node.js + Redis + Docker demo",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "redis": "^4.6.10",
+    "dotenv": "^16.3.1",
+    "express-rate-limit": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
