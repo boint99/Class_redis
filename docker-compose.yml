@@ -11,21 +11,6 @@ services:
       redis:
         condition: service_healthy
     restart: unless-stopped
-
-  redis:
-    image: redis:7-alpine
-    container_name: redis_server
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    command: redis-server --appendonly yes
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-    restart: unless-stopped
-
+    
 volumes:
   redis_data:
