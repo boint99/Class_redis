@@ -1,5 +1,6 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
+const appRoutes = require('./app/v1/routes/appRoutes');
 
 const app = express();
 
@@ -11,6 +12,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+app.use('/api/v1', appRoutes);
 app.get('/', (req, res) => {
   res.send('Server is running');
 });
